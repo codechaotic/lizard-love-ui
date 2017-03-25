@@ -1,0 +1,28 @@
+box: nodesource/jessie:6.4.0
+
+test:
+  steps:
+    - npm-install
+    - script:
+        name: fontello
+        code: npm run fontello
+    - script:
+        name: install-libfontconfig
+        code: >
+          apt-get update &&
+          apt-get install -y --no-install-recommends libfontconfig
+    - npm-test
+    - script:
+        name: archive
+        code: mv * ${WERCKER_OUTPUT_DIR}
+
+deploy:
+  steps:
+    - script:
+        name: build
+        code: npm run build
+    - s3sync:
+      key-id: ${AWS_KEY}
+      key-secret: ${AWS_SECRET}
+      bucket-url: ${AWS_BUCKET}
+      source-dir: dist
