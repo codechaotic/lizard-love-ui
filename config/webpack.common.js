@@ -15,6 +15,7 @@ module.exports = {
   },
 
   module: {
+    exprContextCritical: false,
     rules: [
       {
         test: /\.ts$/,
@@ -67,7 +68,7 @@ module.exports = {
     new webpack.ContextReplacementPlugin(
       // The (\\|\/) piece accounts for path separators in *nix and Windows
       /angular(\\|\/)core(\\|\/)(esm(\\|\/)src|src)(\\|\/)linker/,
-      helpers.root('./src'), // location of your src
+      helpers.root('src'), // location of your src
       {} // a map of your routes
     ),
 
