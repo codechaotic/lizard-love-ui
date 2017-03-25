@@ -1,9 +1,13 @@
 {
   "name": "propelio-is-love-ui",
   "version": "0.1.0",
-  "description": "Angular 2 Front-End for loving on Propelio",
+  "description": "Angular 2 Front-End for Propelio love",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "webpack-dev-server --inline --progress --port 8080",
+    "test": "karma start",
+    "build": "rimraf dist && webpack --config config/webpack.prod.js --progress --profile --bail",
+    "fontello": "fontello-cli --config fontello.json --css ./fontello/css --font ./fontello/font install"
   },
   "repository": {
     "type": "git",
@@ -14,5 +18,60 @@
   "bugs": {
     "url": "https://github.com/codechaotic/propelio-is-love-ui/issues"
   },
-  "homepage": "https://github.com/codechaotic/propelio-is-love-ui#readme"
+  "homepage": "https://github.com/codechaotic/propelio-is-love-ui#readme",
+  "dependencies": {
+    "@angular/common": "~2.2.0",
+    "@angular/compiler": "~2.2.0",
+    "@angular/core": "~2.2.0",
+    "@angular/forms": "~2.2.0",
+    "@angular/http": "~2.2.0",
+    "@angular/material": "^2.0.0-beta.2",
+    "@angular/platform-browser": "~2.2.0",
+    "@angular/platform-browser-dynamic": "~2.2.0",
+    "@angular/router": "~3.2.0",
+    "@angular/upgrade": "^2.2.1",
+    "core-js": "^2.4.1",
+    "fontello-cli": "^0.4.0",
+    "node-sass": "^4.5.0",
+    "rxjs": "5.0.0-beta.12",
+    "sass-loader": "^6.0.2",
+    "zone.js": "^0.6.25"
+  },
+  "devDependencies": {
+    "@types/core-js": "^0.9.34",
+    "@types/jasmine": "2.5.36",
+    "@types/node": "^6.0.45",
+    "angular2-template-loader": "^0.6.0",
+    "awesome-typescript-loader": "^3.0.4",
+    "css-loader": "^0.26.1",
+    "extract-text-webpack-plugin": "2.0.0-beta.5",
+    "file-loader": "^0.9.0",
+    "html-loader": "^0.4.3",
+    "html-webpack-plugin": "^2.16.1",
+    "jasmine": "~2.4.1",
+    "jasmine-core": "~2.4.1",
+    "karma": "^1.3.0",
+    "karma-chrome-launcher": "^2.0.0",
+    "karma-cli": "^1.0.1",
+    "karma-jasmine": "^1.0.2",
+    "karma-jasmine-html-reporter": "^0.2.2",
+    "karma-phantomjs-launcher": "^1.0.2",
+    "karma-sourcemap-loader": "^0.3.7",
+    "karma-webpack": "^2.0.1",
+    "lodash": "^4.16.2",
+    "null-loader": "^0.1.1",
+    "phantomjs-prebuilt": "^2.1.7",
+    "protractor": "~4.0.14",
+    "raw-loader": "^0.5.1",
+    "rimraf": "^2.5.4",
+    "style-loader": "^0.13.1",
+    "tslint": "^3.15.1",
+    "typescript": "~2.2.0",
+    "webpack": "2.2.1",
+    "webpack-dev-server": "2.4.1",
+    "webpack-merge": "^3.0.0"
+  },
+  "engines" : {
+    "node" : ">=6.4.0"
+  }
 }
