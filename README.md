@@ -1,12 +1,12 @@
 > For Demo Purposes Only! Kthx
 
-# Propelio Is Love!
+# Lizard Love!
 
-Propelio© is a bright and shining new tool on the block for accessing *accurate* real estate MLS comps, exclusive lead lists, and high-equity deal alerts to increase your real estate investing profits. This demo AngularJS application creates an opportunity for users to find out what others are saying that makes Propelio so great.
+Lizards are unique and beautiful creatures and often unappreciated by people. This demo AngularJS application creates an opportunity for users to find out what others are saying that makes Lizards so great.
 
 ## About this Project
 
-This is a small but robust user interface for viewing testimonials about Propelio. It is built in Angular 2 and uses the [Webpack JS Module builder](https://webpack.js.org/) to organize build assets and prepare the finished application for production. Webpack also features a dev server for local development and asset watching. For more information about this setup see the [Angular 2 documentation](https://angular.io/docs/ts/latest/guide/webpack.html) on this combination of tools.
+This is a small but robust user interface for viewing testimonials about lizards. It is built in Angular 2 and uses the [Webpack JS Module builder](https://webpack.js.org/) to organize build assets and prepare the finished application for production. Webpack also features a dev server for local development and asset watching. For more information about this setup see the [Angular 2 documentation](https://angular.io/docs/ts/latest/guide/webpack.html) on this combination of tools.
 
 ## Deployment
 
