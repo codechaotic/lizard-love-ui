@@ -1,18 +1,18 @@
-box: nodesource/jessie:6.4.0
+box: node:boron
 
-test:
+build:
   steps:
     - npm-install
-    - script:
+    - script: # Install custom font from fontello
         name: fontello
         code: npm run fontello
-    - script:
+    - script: # Install libfontconfig for PhantomJS to work
         name: install-libfontconfig
         code: >
           apt-get update &&
           apt-get install -y --no-install-recommends libfontconfig
     - npm-test
-    - script:
+    - script: # Move the result to the output directory
         name: archive
         code: mv * ${WERCKER_OUTPUT_DIR}
 
