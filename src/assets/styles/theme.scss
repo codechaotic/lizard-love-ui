@@ -1,0 +1,14 @@
+@import '~@angular/material/core/theming/all-theme';
+
+@include mat-core();
+
+$lizard-primary: mat-palette($mat-light-green);
+$lizard-accent:  mat-palette($mat-red);
+$lizard-warn:    mat-palette($mat-amber);
+$lizard-theme:   mat-light-theme(
+    $lizard-primary,
+    $lizard-accent,
+    $lizard-warn
+);
+
+@include angular-material-theme($lizard-theme);
