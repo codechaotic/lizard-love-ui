@@ -1,0 +1,7 @@
+@import '../assets/styles/variables.scss';
+
+:host {
+  color: mat-color($lizard-accent, 500);
+  font-size: 7em;
+  line-height: 1em;
+}

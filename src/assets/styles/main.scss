@@ -1,8 +1,10 @@
 @import '../../../fontello/css/icon.css';
+@import url('https://fonts.googleapis.com/css?family=Quicksand');
 @import './variables.scss';
 
 html, body {
   height: 100%;
   margin: 0;
-  font-family: sans-serif;
+  font-family: 'Quicksand', sans-serif;
+  background-color: mat-color($lizard-primary, 100);
 }
