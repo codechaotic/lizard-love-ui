@@ -12,9 +12,6 @@ build:
           apt-get update &&
           apt-get install -y --no-install-recommends libfontconfig
     - npm-test
-    - script: # Move the result to the output directory
-        name: archive
-        code: mv * ${WERCKER_OUTPUT_DIR}
 
 deploy:
   steps:
