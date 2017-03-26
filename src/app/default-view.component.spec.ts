@@ -3,6 +3,8 @@ import { By }              from '@angular/platform-browser';
 import { DebugElement }    from '@angular/core';
 
 import { DefaultViewComponent } from './default-view.component';
+import { HeartButtonComponent } from './heart-button.component';
+import { LizardMessageComponent } from './lizard-message.component';
 
 describe('Default View Component', () => {
   let comp:    DefaultViewComponent;
@@ -12,8 +14,18 @@ describe('Default View Component', () => {
 
 
   beforeEach(async(() => {
+    let heartButtonStub = {};
+    let lizardMessageStub = {};
     TestBed.configureTestingModule({
-      declarations: [ DefaultViewComponent ], // declare the test component
+      declarations: [
+        DefaultViewComponent,
+        HeartButtonComponent,
+        LizardMessageComponent
+      ],
+      providers:    [
+        { provide: HeartButtonComponent, useValue: heartButtonStub },
+        { provide: LizardMessageComponent, useValue: lizardMessageStub },
+       ]
     }).compileComponents();  // compile template and css
   }));
 
