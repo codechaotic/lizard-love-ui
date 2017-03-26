@@ -5,3 +5,25 @@
   display: block;
   margin: 0;
 }
+
+.container {
+  display: block;
+  @media (min-width: 400px) { display: flex; }
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 50%;
+  height: auto;
+  max-width: 600px;
+  min-width: 200px;
+  transform: translateX(-50%) translateY(-50%);
+}
+
+.heart {
+  flex: 1;
+}
+
+.message {
+  flex: 3;
+  padding: 15px;
+}
