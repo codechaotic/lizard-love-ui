@@ -9,6 +9,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DefaultViewComponent } from './default-view.component';
 import { HeartButtonComponent } from './heart-button.component';
+import { LizardMessageComponent } from './lizard-message.component';
 
 import './rxjs-extensions';
 
@@ -23,7 +24,8 @@ import './rxjs-extensions';
   declarations: [
     AppComponent,
     DefaultViewComponent,
-    HeartButtonComponent
+    HeartButtonComponent,
+    LizardMessageComponent
   ],
   providers: [],
   bootstrap: [ AppComponent ]
