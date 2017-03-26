@@ -15,9 +15,6 @@ build:
     - script:
         name: build
         code: npm run build
-    - script:
-        name: log source-dir
-        code: ls -l
 
 deploy:
   steps:
