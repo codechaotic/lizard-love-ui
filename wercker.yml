@@ -18,9 +18,6 @@ build:
 
 deploy:
   steps:
-    - script:
-        name: log source-dir
-        code: ls -l
     - s3sync:
       key-id: ${AWS_KEY}
       key-secret: ${AWS_SECRET}
