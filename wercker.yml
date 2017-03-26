@@ -12,12 +12,18 @@ build:
           apt-get update &&
           apt-get install -y --no-install-recommends libfontconfig
     - npm-test
+    - script:
+        name: build
+        code: npm run build
+    - script:
+        name: log source-dir
+        code: ls -l
 
 deploy:
   steps:
     - script:
-        name: build
-        code: npm run build
+        name: log source-dir
+        code: ls -l
     - s3sync:
       key-id: ${AWS_KEY}
       key-secret: ${AWS_SECRET}
