@@ -10,19 +10,16 @@ import { DefaultViewComponent } from './default-view.component';
 import { HeartButtonComponent } from './heart-button.component';
 import { LizardMessageComponent } from './lizard-message.component';
 
-import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
-import { InMemoryDataService }  from './in-memory-data.service';
 import { MessageService } from './message.service';
 
-import './rxjs-extensions';
+import '../rxjs-extensions';
 
 @NgModule({
   imports: [
     BrowserModule,
     HttpModule,
     AppRoutingModule,
-    MaterialModule,
-    InMemoryWebApiModule.forRoot(InMemoryDataService, { delay: 0 }),
+    MaterialModule
   ],
   declarations: [
     AppComponent,

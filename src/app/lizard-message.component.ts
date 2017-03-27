@@ -6,7 +6,7 @@ import { Observable } from 'rxjs/Observable';
 import { MessageService } from './message.service';
 import { Message } from './lib/message';
 
-import './rxjs-extensions';
+import '../rxjs-extensions';
 
 @Component({
   selector: 'lizard-message',

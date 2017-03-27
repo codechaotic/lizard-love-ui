@@ -4,11 +4,11 @@ import { Observable } from 'rxjs/Observable';
 import { Subject } from 'rxjs/Subject';
 
 import { Message } from './lib/message';
-import './rxjs-extensions';
+import '../rxjs-extensions';
 
 @Injectable()
 export class MessageService {
-  private hostname = 'api';
+  private origin = process.env.ORIGIN;
   private subject = new Subject<void>();
 
   public currentMessage: Observable<Message>;
@@ -29,7 +29,7 @@ export class MessageService {
 
   private getRandomMessage(): Observable<Message> {
     return this.http
-      .get(`${this.hostname}/random-message`)
+      .get(`${this.origin}/random-message`)
       .map(res => res.json().data as Message);
   }
 
