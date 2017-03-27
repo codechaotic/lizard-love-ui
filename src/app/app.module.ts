@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { MaterialModule } from '@angular/material';
 
@@ -11,15 +10,19 @@ import { DefaultViewComponent } from './default-view.component';
 import { HeartButtonComponent } from './heart-button.component';
 import { LizardMessageComponent } from './lizard-message.component';
 
+import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { InMemoryDataService }  from './in-memory-data.service';
+import { MessageService } from './message.service';
+
 import './rxjs-extensions';
 
 @NgModule({
   imports: [
     BrowserModule,
-    FormsModule,
     HttpModule,
     AppRoutingModule,
-    MaterialModule
+    MaterialModule,
+    InMemoryWebApiModule.forRoot(InMemoryDataService, { delay: 0 }),
   ],
   declarations: [
     AppComponent,
@@ -27,7 +30,7 @@ import './rxjs-extensions';
     HeartButtonComponent,
     LizardMessageComponent
   ],
-  providers: [],
+  providers: [ MessageService ],
   bootstrap: [ AppComponent ]
 })
 export class AppModule { }
