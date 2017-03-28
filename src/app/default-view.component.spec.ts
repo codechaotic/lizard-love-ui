@@ -12,7 +12,6 @@ describe('Default View Component', () => {
   let de:      DebugElement;
   let el:      HTMLElement;
 
-
   beforeEach(async(() => {
     let heartButtonStub = {};
     let lizardMessageStub = {};
@@ -32,9 +31,5 @@ describe('Default View Component', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(DefaultViewComponent);
     comp = fixture.componentInstance; // DefaultViewComponent test instance
-  });
-
-  it('true should be true', () => {
-    expect(true).toBe(true);
   });
 });

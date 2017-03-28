@@ -3,6 +3,7 @@ import { By }              from '@angular/platform-browser';
 import { DebugElement }    from '@angular/core';
 
 import { HeartButtonComponent } from './heart-button.component';
+import { MessageService } from './message.service';
 
 describe('Heart Button Component', () => {
   let comp:    HeartButtonComponent;
@@ -12,9 +13,15 @@ describe('Heart Button Component', () => {
 
 
   beforeEach(async(() => {
+    let messageServiceStub = {};
     TestBed.configureTestingModule({
-      declarations: [ HeartButtonComponent ], // declare the test component
-    }).compileComponents();  // compile template and css
+      declarations: [
+        HeartButtonComponent
+      ],
+      providers: [
+        { provide: MessageService, useValue: messageServiceStub }
+      ]
+    }).compileComponents();
   }));
 
   beforeEach(() => {

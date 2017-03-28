@@ -3,6 +3,7 @@ import { By }              from '@angular/platform-browser';
 import { DebugElement }    from '@angular/core';
 
 import { LizardMessageComponent } from './lizard-message.component';
+import { MessageService } from './message.service';
 
 describe('Lizard Message Component', () => {
   let comp:    LizardMessageComponent;
@@ -10,11 +11,16 @@ describe('Lizard Message Component', () => {
   let de:      DebugElement;
   let el:      HTMLElement;
 
-
   beforeEach(async(() => {
+    let messageServiceStub = {};
     TestBed.configureTestingModule({
-      declarations: [ LizardMessageComponent ], // declare the test component
-    }).compileComponents();  // compile template and css
+      declarations: [
+        LizardMessageComponent
+      ],
+      providers: [
+        { provide: MessageService, useValue: messageServiceStub }
+      ]
+    }).compileComponents();
   }));
 
   beforeEach(() => {
