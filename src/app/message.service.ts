@@ -18,8 +18,6 @@ export class MessageService {
       .debounceTime(300)
       .switchMap(() => this.getRandomMessage())
       .catch(this.httpError);
-
-    this.currentMessage.subscribe(console.log);
   };
 
   private httpError(error: any): Observable<Message> {
@@ -30,7 +28,7 @@ export class MessageService {
   private getRandomMessage(): Observable<Message> {
     return this.http
       .get(`${this.origin}/random-message`)
-      .map(res => res.json().data as Message);
+      .map(res => res.json() as Message);
   }
 
   public next(): void {
