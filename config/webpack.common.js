@@ -3,11 +3,24 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var helpers = require('./helpers');
 
+var ENV = process.env.ENV = process.env.ENV || 'development';
+
+switch(ENV) {
+  case 'production':
+    var appDirectory = 'app';
+    var ORIGIN = process.env.ORIGIN;
+    if(!ORIGIN) throw new Error('Environment ORIGIN is missing. Requird for production build');
+    break;
+  case 'development':
+    var appDirectory = 'dev';
+    var ORIGIN = process.env.ORIGIN = '/api';
+}
+
 module.exports = {
   entry: {
     'polyfills': './src/polyfills.ts',
     'vendor': './src/vendor.ts',
-    'app': './src/main.ts'
+    'app': `./src/${appDirectory}/main.ts`
   },
 
   resolve: {
@@ -75,6 +88,8 @@ module.exports = {
     new webpack.optimize.CommonsChunkPlugin({
       name: ['app', 'vendor', 'polyfills']
     }),
+
+    new webpack.EnvironmentPlugin(['ENV', 'ORIGIN']),
 
     new HtmlWebpackPlugin({
       template: 'src/index.html'

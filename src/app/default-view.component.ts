@@ -8,5 +8,5 @@ import './default-view.component.scss';
   styleUrls: [ './default-view.component.scss' ]
 })
 export class DefaultViewComponent {
-  message = "Lizard Ipsum";
+  
 }
